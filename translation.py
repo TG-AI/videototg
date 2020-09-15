@@ -2,16 +2,18 @@ class Translation(object):
     START_TEXT = """Hello,
 This is a Telegram File convert Bot!
 You can convert any Telegram Document, using this bot! With custom thumbnail
+
+/help for more details..
      
     """
     ABS_TEXT = " Please don't be selfish."
     BANNED_USER_TEXT = "you are banned"
-    UPGRADE_TEXT = "No upgrade plan 🥰"
-    DOWNLOAD_START = "ᴛʀʏɪɴɢ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ""""
+    UPGRADE_TEXT = "Jσιɳ συɾ ƈԋαɳɳҽʅ\n  @AI_bot_projects"
+    DOWNLOAD_START = "Trying to Download Please wait"
     UPLOAD_START = "Trying to upload Please wait"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "https://t.me/fileConvertRobot"
-    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds. \nPlease rate me if you find me useful. https://t.me/tlgrmcbot?start=anydl_bot-bot \nUploaded in {} seconds."
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me🤓.**\n\n[Jσιɳ συɾ ƈԋαɳɳҽʅ](https://t.me/AI_bot_projects)"
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds. \nPlease [Jσιɳ συɾ ƈԋαɳɳҽʅ](https://t.me/AI_bot_projects) \nUploaded in {} seconds."
     NOT_AUTH_USER_TEXT = "Please /upgrade your subscription."
     SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in next 24 hr"
     DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
@@ -27,7 +29,7 @@ Expires on: 24ᵗʰ every month"""
     HELP_USER = """I can do:
 1. Send Media file
 2. Send custom Thumbnail
-3. Reply the media file - /convtovideo
+3. Reply the media file - /converttovideo
 
 --------
 
