@@ -95,6 +95,7 @@ async def start(bot, m):
                 ],
                 [
                     InlineKeyboardButton('👨  Master', url='https://t.me/pppppgame')
+                    InlineKeyboardButton('🚨  Youtube Channel', url='https://www.youtube.com/channel/UCyn07B5o6N67FkAEGmW5VfQ/videos?view_as=subscriber')
                 ]
             ]
                     
