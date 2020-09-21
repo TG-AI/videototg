@@ -94,7 +94,7 @@ async def start(bot, m):
                     InlineKeyboardButton('🔖  Projects Channel', url='https://t.me/AI_bot_projects')
                 ],
                 [
-                    InlineKeyboardButton('💡  Youtube Channel', url='https://rentry.co/prub9/raw'),
+                    InlineKeyboardButton('🚨  Youtube Channel', url='https://rentry.co/prub9/raw'),
                     InlineKeyboardButton('👨  Master', url='https://t.me/pppppgame')
                 ]
             ]
