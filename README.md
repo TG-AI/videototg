@@ -7,11 +7,6 @@ An Open Source Telegram RoBot  😍
 
 * [@Spechide](https://telegram.dog/spechide)
 
-### Installation
-
-#### The Easy Way
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Our Telegram Channel and Group
 
