@@ -60,7 +60,7 @@ async def get_me_info(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, m):
     await m.reply_text(
-        text=f"Hello,\n\nThis is a Telegram Midea convert Bot!\n<i>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail <\i>\n<b>/help if you have any doubt in using me..</b>\n\n<b>>> You Must Join My Updates Channel For Using Me 😇 </b>",
+        text="Hello,\n\nThis is a Telegram Midea convert Bot!\n<i>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail <\i>\n<b>/help if you have any doubt in using me..</b>\n\n<b>>> You Must Join My Updates Channel For Using Me 😇 </b>",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
