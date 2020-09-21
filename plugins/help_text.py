@@ -85,7 +85,7 @@ async def upgrade(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, m):
     await m.reply_text(
-        text=f"Hello,\n\nThis is a Telegram Midea convert Bot!\n<tt>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </tt>\n\n<b>/help if you have any doubt in using me..</b>\n\n<b> >> You Must Join My Updates Channel For Using Me 😇 </b>",
+        text=f"Hello,\n\nThis is a Telegram Midea convert Bot!\n<I>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n<b> >> You Must Join My Updates Channel For Using Me 😇 </b>",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -94,7 +94,7 @@ async def start(bot, m):
                     InlineKeyboardButton('🔖  Projects Channel', url='https://t.me/AI_bot_projects')
                 ],
                 [
-                    InlineKeyboardButton('💡  Supported urls', url='https://rentry.co/prub9/raw'),
+                    InlineKeyboardButton('💡  Youtube Channel', url='https://rentry.co/prub9/raw'),
                     InlineKeyboardButton('👨  Master', url='https://t.me/pppppgame')
                 ]
             ]
