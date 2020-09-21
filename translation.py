@@ -25,18 +25,31 @@ You can convert any Telegram Document, using this bot! With custom thumbnail
 --------
 Telegram ID: <code>{}</code>
 Plan name: Free User
-Expires on: 24ᵗʰ every month"""
-    HELP_USER = """I can do:
-1. Send Media file
-2. Send custom Thumbnail
-3. Reply the media file - /converttovideo
+Expires on: 22ᵗʰ every month"""
+    HELP_USER = """1. Send A Telegram Media To Convert
+2. Send Custom Thumbnail
+3. Replay to a Telegram Media /ctv
 
---------
+Features
 
-Send /me to know current plan details
+  >>> 
+Convert any Telegram Document to Streaming Video
+
+  >>> 
+Custom thumbnail Support
+
+Available Commands
+
+/converttovideo -
+Use This Command To Get Streamable Video
+/deletethumbnail -
+Delete Your Saved Thumbnail
+
+Send /plan to know current plan details
 
 Support Group : @AI_BOT_HELP
 
 """
 
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
+    SOURCE_TEXT = "നോക്കി ഇരുന്നോ ഇപ്പോ കിട്ടു൦🤤🤤🤤"
