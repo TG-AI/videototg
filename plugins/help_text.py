@@ -70,10 +70,13 @@ async def upgrade(bot, update):
     
                     
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
-async def start(bot, m):
-    await m.reply_text(
-        text=f"Hello,\nThis is a Telegram Midea convert Bot!\n\n<I>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n❗️<b> You Must Join My Updates Channel For Using Me </b>😇 ",
-        quote=True,
+async def start(bot, update):
+    # logger.info(update)
+    TRChatBase(update.from_user.id, update.text, "/start")
+
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.START_TEXT.format(update.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(
             [
                 [
