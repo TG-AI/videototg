@@ -40,7 +40,7 @@ Custom thumbnail Support
 
 Available Commands
 
-/converttovideo -
+/ctv -
 Use This Command To Get Streamable Video
 /deletethumbnail -
 Delete Your Saved Thumbnail
