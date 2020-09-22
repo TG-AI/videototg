@@ -1,9 +1,5 @@
 class Translation(object):
-    START_TEXT = """Hello,
-This is a Telegram File convert Bot!
-You can convert any Telegram Document, using this bot! With custom thumbnail
-
-/help for more details..
+    START_TEXT = """Hello {},\nThis is a Telegram Midea convert Bot!\n\n<I>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n❗️<b> You Must Join My Updates Channel For Using Me </b>😇 Hello,\nThis is a Telegram Midea convert Bot!\n\n<I>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n❗️<b> You Must Join My Updates Channel For Using Me </b>😇 
      
     """
     ABS_TEXT = " Please don't be selfish."
