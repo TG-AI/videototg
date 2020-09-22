@@ -48,4 +48,4 @@ Support Group : @AI_BOT_HELP
 """
 
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
-    SOURCE_TEXT = "നോക്കി ഇരുന്നോ ഇപ്പോ കിട്ടു൦🤤🤤🤤"
+    SOURCE_TEXT = "CQACAgQAAxkBAAEGJc9fajcFEebrCuYKogwR77T10WTn5AACXQkAAgx6UFP4Can5fAplLxsE"
