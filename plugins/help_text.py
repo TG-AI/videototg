@@ -55,19 +55,6 @@ async def get_me_info(bot, update):
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
-
-    
-@pyrogram.Client.on_message(pyrogram.Filters.command(["upgrade"]))
-async def upgrade(bot, update):
-    # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/upgrade")
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.UPGRADE_TEXT,
-        parse_mode="html",
-        reply_to_message_id=update.message_id,
-        disable_web_page_preview=True
-    )
     
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["source"]))
@@ -85,7 +72,7 @@ async def upgrade(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, m):
     await m.reply_text(
-        text=f"Hello,\n\nThis is a Telegram Midea convert Bot!\n<I>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n<b> >> You Must Join My Updates Channel For Using Me 😇 </b>",
+        text=f"Hello,\nThis is a Telegram Midea convert Bot!\n\n<I>You can convert any Telegram Midea file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n<b> >> You Must Join My Updates Channel For Using Me 😇 </b>",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -94,9 +81,23 @@ async def start(bot, m):
                     InlineKeyboardButton('🔖  Projects Channel', url='https://t.me/AI_bot_projects')
                 ],
                 [
-                    InlineKeyboardButton('🚨  Youtube Channel', url='https://rentry.co/prub9/raw'),
+                    InlineKeyboardButton('🚨  Youtube Channel', url='https://www.youtube.com/channel/UCyn07B5o6N67FkAEGmW5VfQ'),
                     InlineKeyboardButton('👨  Master', url='https://t.me/pppppgame')
                 ]
             ]
         )
+    )
+
+    
+    
+    @pyrogram.Client.on_message(pyrogram.Filters.command(["upgrade"]))
+async def upgrade(bot, update):
+    # logger.info(update)
+    TRChatBase(update.from_user.id, update.text, "/upgrade")
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.UPGRADE_TEXT,
+        parse_mode="html",
+        reply_to_message_id=update.message_id,
+        disable_web_page_preview=True
     )
