@@ -1,3 +1,4 @@
+from helper_funcs.chat_base import TRChatBase
 class Translation(object):
     START_TEXT = """Hello {},\nThis is a Telegram Media convert Bot!\n\n<I>You can convert any Telegram Media file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n❗️<b> You Must Join My Updates Channel For Using Me </b>😇  
      
@@ -15,7 +16,7 @@ class Translation(object):
     DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
     SAVED_RECVD_DOC_FILE = "Document Downloaded Successfully."
-    CUSTOM_CAPTION_UL_FILE = "description" + "\n\n©️ @ConvertToVideobyAI_bot"
+    CUSTOM_CAPTION_UL_FILE = description + "\n\n©️ @ConvertToVideobyAI_bot"
     NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found."
     CURENT_PLAN_DETAILS = """Current plan details
 --------
