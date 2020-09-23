@@ -108,7 +108,7 @@ async def get_me_info(bot, update):
     ) 
     
     
-    @pyrogram.Client.on_message(pyrogram.Filters.command(["source", "code"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["source", "code"]))
 async def upgrade(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/source")
