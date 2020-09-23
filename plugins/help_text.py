@@ -1,3 +1,5 @@
+from pyrogram import Filters, InlineKeyboardMarkup, InlineKeyboardButton
+
 # the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
