@@ -53,31 +53,8 @@ async def get_me_info(bot, update):
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )  
-    
-                    
-@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
-async def start(bot, update):
-    # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/start")
+ 
 
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.START_TEXT.format(update.from_user.first_name),
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('📌  Support Group', url='https://t.me/AI_BOT_HELP'),
-                    InlineKeyboardButton('🔖  Projects Channel', url='https://t.me/AI_bot_projects')
-                ],
-                [
-                    InlineKeyboardButton('🚨  Youtube Channel', url='https://www.youtube.com/channel/UCyn07B5o6N67FkAEGmW5VfQ'),
-                    InlineKeyboardButton('👨  Master', url='https://t.me/pppppgame')
-                ]
-            ]
-        )
-    )
-
-    
 @pyrogram.Client.on_message(pyrogram.Filters.command(["source"]))
 async def upgrade(bot, update):
     # logger.info(update)
@@ -101,3 +78,28 @@ async def upgrade(bot, update):
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
     )    
+
+
+@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
+async def start(bot, update):
+    # logger.info(update)
+    TRChatBase(update.from_user.id, update.text, "/start")
+
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.START_TEXT.format(update.from_user.first_name),
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('📌  Support Group', url='https://t.me/AI_BOT_HELP'),
+                    InlineKeyboardButton('🔖  Projects Channel', url='https://t.me/AI_bot_projects')
+                ],
+                [
+                    InlineKeyboardButton('🚨  Youtube Channel', url='https://www.youtube.com/channel/UCyn07B5o6N67FkAEGmW5VfQ'),
+                    InlineKeyboardButton('👨  Master', url='https://t.me/pppppgame')
+                ]
+            ]
+        )
+    )
+
+    
