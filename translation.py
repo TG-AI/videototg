@@ -48,10 +48,11 @@ Support Group : @AI_BOT_HELP
 """
 
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
-    SOURCE_TEXT = "ഇപ്പോ കിട്ടു൦🤤🤤🤤"
+    SOURCE_TEXT = "<a href='https://t.me/AI_bots_code'>Click here</a>"
     ABOUT_TEXT = """Bot: @ConvertToVideobyAI_bot
 Creator: <a href='https://t.me/pppppgame'>✰ai✔️ ✪</a>
 Language: Python3
 Library: <a href='https://docs.pyrogram.org/'>Pyrogram 0.17.1-async</a>
+Source Code: <a href='https://t.me/AI_bots_code'>Click here</a>
 Server: <a href='https://herokuapp.com/'>Heroku</a>
 Request: കൊല്ലരുത് [Don't Kill me] 😥 please """
