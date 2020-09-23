@@ -48,9 +48,9 @@ Support Group : @AI_BOT_HELP
 """
 
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
-    SOURCE_TEXT = "നോക്കി ഇരുന്നോ ഇപ്പോ കിട്ടു൦🤤🤤🤤"
+    SOURCE_TEXT = "[നോക്കി ഇരുന്നോ ഇപ്പോ കിട്ടു൦🤤🤤🤤](https://t.me/AI_bots_code)"
     ABOUT_TEXT = """Bot: @ConvertToVideobyAI_bot
-Creator: [✰ai✔️ ✪](https://t.me/W4RR10R)
+Creator: [✰ai✔️ ✪](https://t.me/pppppgame)
 Language: Python3
 Library: [Pyrogram 0.17.1-async](https://docs.pyrogram.org/)
 Source Code: [Click Here](https://t.me/AI_bots_code)
