@@ -81,7 +81,7 @@ async def convert_to_video(bot, update):
                 c_time
             )
         )
-        if the_real_download_location is not None:
+        if the_real_download_location is None:
             bot.edit_message_text(
                 text=Translation.SAVED_RECVD_DOC_FILE,
                 chat_id=update.chat.id,
