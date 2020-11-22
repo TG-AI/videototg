@@ -62,7 +62,7 @@ async def convert_to_video(bot, update):
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
-    if update.reply_to_message is not None:
+    if update.message.document is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
@@ -81,7 +81,7 @@ async def convert_to_video(bot, update):
                 c_time
             )
         )
-        if the_real_download_location is None:
+        if the_real_download_location is not None:
             bot.edit_message_text(
                 text=Translation.SAVED_RECVD_DOC_FILE,
                 chat_id=update.chat.id,
