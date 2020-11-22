@@ -34,7 +34,7 @@ from PIL import Image
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.document)
-async def convert_to_video(bot, update, message):
+async def convert_to_video(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
@@ -72,7 +72,7 @@ async def convert_to_video(bot, update, message):
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
-            message=update.message.document,
+            message=update.document,
             file_name=download_location,
             progress=progress_for_pyrogram,
             progress_args=(
