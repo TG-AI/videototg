@@ -33,7 +33,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.document)
+@pyrogram.Client.on_message(pyrogram.Filters.document | pyrogram.Filters.video)
 async def convert_to_video(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
@@ -62,7 +62,7 @@ async def convert_to_video(bot, update):
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
-    if update.document is not None:
+    if update.video or update.document is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
@@ -72,7 +72,7 @@ async def convert_to_video(bot, update):
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
-            message=update.document,
+            message=update,
             file_name=download_location,
             progress=progress_for_pyrogram,
             progress_args=(
