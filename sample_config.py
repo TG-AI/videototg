@@ -18,6 +18,8 @@ class Config(object):
     # Telegram maximum file upload size
     MAX_FILE_SIZE = 50000000
     TG_MAX_FILE_SIZE = 2097152000
+    DATABASE_URL = os.environ.get('DATABASE_URL')
+    MAX_PROCESSES_PER_USER = int(os.environ.get('MAX_PROCESSES_PER_USER', 2))
     FREE_USER_MAX_FILE_SIZE = 50000000
     # chunk size that should be used with requests
     CHUNK_SIZE = int(os.environ.get("CHUNK_SIZE", 128))
