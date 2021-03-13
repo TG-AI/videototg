@@ -61,12 +61,6 @@ async def convert_to_video(bot, update):
         else:
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
     TRACK_CHANNEL = Config.TRACK_CHANNEL
-    if TRACK_CHANNEL:
-      await bot.forward_messages(
-            TRACK_CHANNEL,
-            update.chat.id,
-            update.message_id
-        )
     TRChatBase(update.from_user.id, update.text, "ctv")
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
