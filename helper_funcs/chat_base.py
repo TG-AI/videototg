@@ -19,7 +19,7 @@ else:
 # the Strings used for this "thing"
 from translation import Translation
 
-from pyrogram import Client, Filters
+from pyrogram import Client
 
 # the Telegram trackings
 from chatbase import Message
