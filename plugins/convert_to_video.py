@@ -42,6 +42,31 @@ async def convert_to_video(bot, update):
             reply_to_message_id=update.message_id
         )
         return
+    if update.from_user.id not in Config.AUTH_USERS:
+        # restrict free users from sending more links
+        if str(update.from_user.id) in Config.ADL_BOT_RQ:
+            current_time = time.time()
+            previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
+            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
+            testtime = round(previous_time - current_time)
+            if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
+                await bot.send_message(
+                    chat_id=update.chat.id,
+                    text=Translation.FREE_USER_LIMIT_Q_SZE.format(Config.PROCESS_MAX_TIMEOUT),
+                    disable_web_page_preview=True,
+                    parse_mode="html",
+                    reply_to_message_id=update.message_id
+                )
+                return
+        else:
+            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
+    TRACK_CHANNEL = Config.TRACK_CHANNEL
+    if TRACK_CHANNEL:
+      await bot.forward_messages(
+            TRACK_CHANNEL,
+            update.chat.id,
+            update
+        )
     TRChatBase(update.from_user.id, update.text, "ctv")
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
