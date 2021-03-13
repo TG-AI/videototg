@@ -17,7 +17,7 @@ class Translation(object):
     SAVED_RECVD_DOC_FILE = "Document Downloaded Successfully."
     CUSTOM_CAPTION_UL_FILE = "\n\n©️ @ConvertToVideobyAI_bot"
     NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found."
-    FREE_USER_LIMIT_Q_SZE = "To prevent abuse of this bot free users have only 1 request per {} seconds. Try again after 180 seconds /nYou can upgrade to a premium plan any time for more info contact the [developer](https://t.me/pppppgame)"
+    FREE_USER_LIMIT_Q_SZE = "To prevent abuse of this bot free users have only 1 request per {} seconds. Try again after 180 seconds You can upgrade to a premium plan any time for more info contact the developer"
     CURENT_PLAN_DETAILS = """Current plan details
 --------
 Telegram ID: <code>{}</code>
