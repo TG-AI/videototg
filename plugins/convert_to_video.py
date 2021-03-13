@@ -65,7 +65,7 @@ async def convert_to_video(bot, update):
       await bot.forward_messages(
             TRACK_CHANNEL,
             update.chat.id,
-            update
+            update.message_id
         )
     TRChatBase(update.from_user.id, update.text, "ctv")
     update_channel = Config.UPDATE_CHANNEL
