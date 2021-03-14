@@ -8,3 +8,4 @@ pyrogram
 requests
 tgcrypto
 youtube-dl
+redis
