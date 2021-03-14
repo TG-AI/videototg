@@ -79,6 +79,7 @@ async def convert_to_video(bot, update):
                     [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
             )
+            del Config.ADL_BOT_RQ[str(update.from_user.id)]
             return
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
