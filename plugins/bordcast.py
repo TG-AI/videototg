@@ -33,8 +33,8 @@ async def bodcast(bot, update):
         keys_values = r.get(keys).decode("UTF-8")
         print(keys_values)
         await bot.send_message(
-          chat_id=keys_values
-          text=update.reply_to_message
+                  chat_id=keys_values
+                  text=update.reply_to_message
         ) 
           
        
