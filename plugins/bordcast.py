@@ -23,7 +23,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
 
-r = redis.from_url(os.get.environ(“REDIS_URL”))
+r = redis.from_url(rd)
 db_keys = r.keys(pattern="*")
 @pyrogram.Client.on_message(pyrogram.Filters.command(["bodcast"]))
 async def bodcast(bot, update):
