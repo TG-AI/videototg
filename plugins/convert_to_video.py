@@ -47,6 +47,7 @@ async def convert_to_video(bot, update):
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
             previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
+            print(previous_time)
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
             testtime = round(previous_time - current_time)
             if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
