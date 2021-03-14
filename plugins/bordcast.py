@@ -25,15 +25,15 @@ from helper_funcs.chat_base import TRChatBase
 
 r = redis.from_url(rd)
 db_keys = r.keys(pattern="*")
-@pyrogram.Client.on_message(pyrogram.Filters.command(["bodcast"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["bodcast"]))
 async def bodcast(bot, update):
-    TRChatBase(update.from_user.id, update.text, "converttovideo")
+    TRChatBase(update.from_user.id, update.text, "bodcast")
     if update.from_user.id in Config.AUTH_USERS:
       for keys in db_keys:
         keys_values = r.get(keys).decode("UTF-8")
         print(keys_values)
         await bot.send_message(
-                  chat_id=keys_values
+                  chat_id=keys_values,
                   text=update.reply_to_message
         ) 
           
