@@ -50,6 +50,7 @@ async def convert_to_video(bot, update):
             print(previous_time)
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
             testtime = round(previous_time - current_time)
+            print(Config.ADL_BOT_RQ)
             if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
                 await bot.send_message(
                     chat_id=update.chat.id,
