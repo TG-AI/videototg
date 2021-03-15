@@ -27,7 +27,7 @@ r = redis.from_url(os.environ.get("REDIS_URL"))
 db_keys = r.keys(pattern="*")
 @pyrogram.Client.on_message(pyrogram.filters.command(["bodcast"]))
 async def bodcast(bot, update):
-    TRChatBase(update.from_user.id, update.text, "bodcast")
+    
     if update.from_user.id in Config.AUTH_USERS:
       for keys in db_keys:
         keys_values = r.get(keys).decode("UTF-8")
