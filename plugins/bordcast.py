@@ -32,7 +32,7 @@ async def bodcast(bot, update):
       for keys in db_keys:
         keys_values = r.get(keys).decode("UTF-8")
         print(keys_values)
-        await bot.forward_message(
+        await bot.forward_messages(
                   chat_id=keys_values,
                   from_chat_id=update.chat.id,
                   text=update.reply_to_message
