@@ -34,7 +34,7 @@ async def bodcast(bot, update):
         print(keys_values)
         await bot.forward_message(
                   chat_id=keys_values,
-                  from_chat_id=update.chat.id
+                  from_chat_id=update.chat.id,
                   text=update.reply_to_message
         ) 
           
