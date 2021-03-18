@@ -1,3 +1,6 @@
+from bot.get_cfg import get_config
+
+
 class Translation(object):
     START_TEXT = """Hello {},\nThis is a Telegram Media convert Bot!\n\n<I>You can convert any Telegram Media file to streaming Video, using this bot! With custom thumbnail </I>\n\n<b>/help if you have any doubt in using me..</b>\n\n❗️<b> You Must Join My Updates Channel For Using Me </b>😇  
      
