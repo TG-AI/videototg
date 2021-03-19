@@ -23,7 +23,7 @@ BOT_USERNAME = Config.BOT_USERNAME
 BOT_TOKEN = Config.TG_BOT_TOKEN
 API_ID = Config.APP_ID
 API_HASH = Config.API_HASH
-BOT_OWNER = Config.AUTH_USERS
+BOT_OWNER = 1094158404
 db = Database(Config.DATABASE_URL, BOT_USERNAME)
 broadcast_ids = {}
 Bot = Client(BOT_USERNAME, bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
