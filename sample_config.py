@@ -3,6 +3,7 @@ import os
 class Config(object):
     # get a token from https://chatbase.com
     CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
     # get a token from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
