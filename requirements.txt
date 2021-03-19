@@ -7,5 +7,7 @@ Pillow
 pyrogram
 requests
 tgcrypto
-youtube-dl
-redis
+motor
+https://github.com/Tinche/aiofiles/archive/master.zip
+dnspython
+psutil
