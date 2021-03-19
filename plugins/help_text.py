@@ -27,10 +27,16 @@ def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
     Config.AUTH_USERS.add(683538773)
     return expires_at   
-
+db = Database(Config.DATABASE_URL, BOT_USERNAME)
 @pyrogram.Client.on_message(pyrogram.filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
+    if not await db.is_user_exist(update.from_user.id):
+		        await db.add_user(update.from_user.id)
+		        await bot.send_message(
+		            int(Config.TRACK_CHANNEL),
+		            f"#NEW_USER: \n\nNew User [{update.from_user.first_name}](tg://user?id={update.from_user.id}) started @{BOT_USERNAME} !!"
+		        )
     TRChatBase(update.from_user.id, update.text, "/start")
     await bot.send_message(
         chat_id=update.chat.id,
