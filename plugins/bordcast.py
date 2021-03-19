@@ -20,7 +20,7 @@ from database import Database
 ## --- Sub Configs --- ##
 BOT_USERNAME = Config.BOT_USERNAME
 BOT_TOKEN = Config.TG_BOT_TOKEN
-API_ID = Config.API_ID
+API_ID = Config.APP_ID
 API_HASH = Config.API_HASH
 BOT_OWNER = Config.AUTH_USERS
 db = Database(Config.DATABASE_URL, BOT_USERNAME)
