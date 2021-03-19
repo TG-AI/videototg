@@ -26,16 +26,16 @@ from helper_funcs.chat_base import TRChatBase
 r = redis.from_url(os.environ.get("REDIS_URL"))
 db_keys = r.keys(pattern="*")
 @pyrogram.Client.on_message(pyrogram.filters.command(["bodcast"]))
-async def bodcast(bot, message):
+async def bodcast(bot, update):
     
-    if message.from_user.id in Config.AUTH_USERS:
+    if update.from_user.id in Config.AUTH_USERS:
       for keys in db_keys:
         keys_values = r.get(keys).decode("UTF-8")
         print(keys_values)
         await bot.forward_messages(
                   chat_id=keys_values,
-                  from_chat_id=message.chat.id,
-                  message_ids=message.message_id
+                  from_chat_id=update.chat.id,
+                  message_ids=update.reply_to_message.message_id
         ) 
           
        
