@@ -11,17 +11,12 @@ from bot import (
     SESSION_NAME,
     DATABASE_URL
 )
-from bot.plugins.new_join_fn import (	
-    help_message_f	
-)
 
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 
-from bot.plugins.incoming_message_fn import (
-    incoming_start_message_f,
-    incoming_compress_message_f,
-    incoming_cancel_message_f
+from bot.plugins.convert_to_video import (
+    convert_to_video
 )
 
 from bot.plugins.admin import (
@@ -41,7 +36,6 @@ from bot.plugins.status_message_fn import (
 )
 
 from bot.commands import Command
-from bot.plugins.call_back_button_handler import button
 
 if __name__ == "__main__" :
     # create download directory, if not exist
