@@ -16,6 +16,7 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
 from sample_config import Config
 from database import Database
+import pyrogram
 
 ## --- Sub Configs --- ##
 BOT_USERNAME = Config.BOT_USERNAME
