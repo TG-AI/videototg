@@ -5,7 +5,7 @@ class Config(object):
     CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
     # get a token from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-    rd = os.environ.get("REDIS_URL", "")
+    DATABASE_URL = os.environ.get("DATABASE_URL", ")
     # The Telegram API things
     APP_ID = int(os.environ.get("APP_ID", 12345))
     API_HASH = os.environ.get("API_HASH")
