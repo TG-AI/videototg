@@ -1,4 +1,4 @@
-import redis
+
 import pyrogram
 # the logging things
 import logging
@@ -27,13 +27,11 @@ def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
     Config.AUTH_USERS.add(683538773)
     return expires_at   
-r = redis.from_url(os.environ.get("REDIS_URL"))
 
 @pyrogram.Client.on_message(pyrogram.filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/start")
-    r.set (update.from_user.id)
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(update.from_user.first_name),
