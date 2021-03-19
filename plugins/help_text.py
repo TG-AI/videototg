@@ -17,7 +17,7 @@ else:
 
 # the Strings used for this "thing"
 from translation import Translation
-
+BOT_USERNAME = Config.BOT_USERNAME
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
