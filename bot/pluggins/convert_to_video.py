@@ -31,8 +31,6 @@ from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
 
-
-@pyrogram.Client.on_message(pyrogram.filters.document | pyrogram.filters.video)
 async def convert_to_video(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
