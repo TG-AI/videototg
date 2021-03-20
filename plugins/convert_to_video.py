@@ -117,7 +117,7 @@ async def convert_to_video(bot, update):
             #    message_id=a.message_id
           #  )
             logger.info(the_real_download_location)
-            fuckingname = the_real_download_location - "/app/DOWNLOADS/"
+            fuckingname = the_real_download_location.replace("/app/DOWNLOADS/", " ")
             print(fuckingname)
             # get the correct width, height, and duration for videos greater than 10MB
             # ref: message from @BotSupport
