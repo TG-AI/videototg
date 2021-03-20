@@ -157,12 +157,6 @@ async def convert_to_video(bot, update):
             # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             # try to upload file
             c_time = time.time()
-            if ".mkv" or ".mp4" or ".webm" or ".avi" or ".wmv" or ".flv" or ".ogv" or ".mov" not in fuckingname:
-              await bot.send_message(
-                  chat_id=update.chat.id,
-                  text="ops looks like it's not a video file if it's not a video file the upload may be stoped",
-                  reply_to_message_id=update.message_id
-              )
             await bot.send_video(
                 chat_id=update.chat.id,
                 video=the_real_download_location,
