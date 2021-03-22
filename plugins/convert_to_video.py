@@ -169,7 +169,7 @@ async def convert_to_video(bot, update):
             # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             # try to upload file
             c_time = time.time()
-            if duckext not in fuckinglist
+            if duckext not in fuckinglist:
 	    print("fucek")
 	    print(duckext)
             await bot.send_video(
