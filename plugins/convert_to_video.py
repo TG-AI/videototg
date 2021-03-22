@@ -131,8 +131,8 @@ async def convert_to_video(bot, update):
             logger.info(the_real_download_location)
             fuckingname = the_real_download_location.replace("/app/DOWNLOADS/", " ")
             print(fuckingname)
-	    if duckext not in fuckingname:
-			print(hello)
+	    #if duckext not in fuckingname:
+			#print(hello)
             # get the correct width, height, and duration for videos greater than 10MB
             # ref: message from @BotSupport
             width = 0
