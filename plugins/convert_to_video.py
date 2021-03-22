@@ -131,6 +131,9 @@ async def convert_to_video(bot, update):
             logger.info(the_real_download_location)
             fuckingname = the_real_download_location.replace("/app/DOWNLOADS/", " ")
             print(fuckingname)
+	    if duckext not in fuckinglist:
+	        print("fucek")
+	        print(duckext)
             # get the correct width, height, and duration for videos greater than 10MB
             # ref: message from @BotSupport
             width = 0
@@ -169,9 +172,6 @@ async def convert_to_video(bot, update):
             # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             # try to upload file
             c_time = time.time()
-            if duckext not in fuckinglist:
-	        print("fucek")
-	        print(duckext)
             await bot.send_video(
                 chat_id=update.chat.id,
                 video=the_real_download_location,
