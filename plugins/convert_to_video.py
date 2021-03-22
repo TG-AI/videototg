@@ -30,10 +30,10 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 BOT_USERNAME = Config.BOT_USERNAME
-uckinglist = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".flv", ".ogv", ".mov"]
-duck = uckinglist.split(".")
-ducknum = len(duck)
-duckext = duck[ducknum - 1]
+#uckinglist = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".flv", ".ogv", ".mov"]
+#duck = uckinglist.split(".")
+#ducknum = len(duck)
+#duckext = duck[ducknum - 1]
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
 from database import Database
