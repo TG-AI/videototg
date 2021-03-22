@@ -30,9 +30,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 BOT_USERNAME = Config.BOT_USERNAME
-fuckinglist = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".flv", ".ogv", ".mov"]
-duck = fuckinglist.split(".")
-ducknum = len(fuckinglist)
+uckinglist = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".flv", ".ogv", ".mov"]
+duck = uckinglist.split(".")
+ducknum = len(duck)
 duckext = duck[ducknum - 1]
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
@@ -131,7 +131,7 @@ async def convert_to_video(bot, update):
             logger.info(the_real_download_location)
             fuckingname = the_real_download_location.replace("/app/DOWNLOADS/", " ")
             print(fuckingname)
-	    if duckext not in fuckinglist:
+	    if duckext not in uckinglist:
 	        print("fucek")
 	        print(duckext)
             # get the correct width, height, and duration for videos greater than 10MB
