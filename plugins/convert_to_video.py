@@ -29,12 +29,20 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
+BOT_USERNAME = Config.BOT_USERNAME
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
+from database import Database
 
-
+db = Database(Config.DATABASE_URL, BOT_USERNAME)
 @pyrogram.Client.on_message(pyrogram.filters.document | pyrogram.filters.video)
 async def convert_to_video(bot, update):
+    if not await db.is_user_exist(update.from_user.id):
+		        await db.add_user(update.from_user.id)
+		        await bot.send_message(
+		            int(Config.TRACK_CHANNEL),
+		            f"#NEW_USER: \n\nNew User [{update.from_user.first_name}](tg://user?id={update.from_user.id}) started @{BOT_USERNAME} !!"
+		        )
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
