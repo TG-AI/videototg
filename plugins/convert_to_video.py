@@ -29,73 +29,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-BOT_USERNAME = Config.BOT_USERNAME
 #uckinglist = [".mkv", ".mp4", ".webm", ".avi", ".wmv", ".flv", ".ogv", ".mov"]
 #duck = uckinglist.split(".")
 #ducknum = len(duck)
 #duckext = duck[ducknum - 1]
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
-from database import Database
 
-db = Database(Config.DATABASE_URL, BOT_USERNAME)
-@pyrogram.Client.on_message(pyrogram.filters.document | pyrogram.filters.video)
+@pyrogram.Client.on_message(pyrogram.filters.document | pyrogram.filters.video & filters.user(Config.AUTH_USERS))
 async def convert_to_video(bot, update):
-    if not await db.is_user_exist(update.from_user.id):
-		        await db.add_user(update.from_user.id)
-		        await bot.send_message(
-		            int(Config.TRACK_CHANNEL),
-		            f"#NEW_USER: \n\nNew User [{update.from_user.first_name}](tg://user?id={update.from_user.id}) started @{BOT_USERNAME} !!"
-		        )
-    if update.from_user.id in Config.BANNED_USERS:
-        await bot.send_message(
-            chat_id=update.chat.id,
-            text=Translation.BANNED_USER_TEXT,
-            reply_to_message_id=update.message_id
-        )
-        return
-    if update.from_user.id not in Config.AUTH_USERS:
-        # restrict free users from sending more links
-        if str(update.from_user.id) in Config.ADL_BOT_RQ:
-            current_time = time.time()
-            previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
-            print(previous_time)
-            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-            testtime = round(previous_time - current_time)
-            print(Config.ADL_BOT_RQ)
-            if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
-                await bot.send_message(
-                    chat_id=update.chat.id,
-                    text=Translation.FREE_USER_LIMIT_Q_SZE.format(Config.PROCESS_MAX_TIMEOUT),
-                    disable_web_page_preview=True,
-                    parse_mode="html",
-                    reply_to_message_id=update.message_id
-                )
-                return
-        else:
-            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-    TRACK_CHANNEL = Config.TRACK_CHANNEL
-    TRChatBase(update.from_user.id, update.text, "ctv")
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            del Config.ADL_BOT_RQ[str(update.from_user.id)]
-            return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
+    
     if update.video or update.document is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
