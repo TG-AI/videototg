@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 import os
 import sqlite3
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -18,6 +18,7 @@ else:
 # the Strings used for this "thing"
 from translation import Translation
 import pyrogram
+from pyrogram import filters
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
