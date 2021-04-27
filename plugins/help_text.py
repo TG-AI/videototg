@@ -17,26 +17,18 @@ else:
 
 # the Strings used for this "thing"
 from translation import Translation
-BOT_USERNAME = Config.BOT_USERNAME
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
-from database import Database
 def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
-    Config.AUTH_USERS.add(683538773)
+    Config.AUTH_USERS.add(1094158404)
     return expires_at   
-db = Database(Config.DATABASE_URL, BOT_USERNAME)
-@pyrogram.Client.on_message(pyrogram.filters.command(["start"]))
+
+@pyrogram.Client.on_message(pyrogram.filters.command(["start"]) & filters.user(Config.AUTH_USERS))
 async def start(bot, update):
     # logger.info(update)
-    if not await db.is_user_exist(update.from_user.id):
-		        await db.add_user(update.from_user.id)
-		        await bot.send_message(
-		            int(Config.TRACK_CHANNEL),
-		            f"#NEW_USER: \n\nNew User [{update.from_user.first_name}](tg://user?id={update.from_user.id}) started @{BOT_USERNAME} !!"
-		        )
     TRChatBase(update.from_user.id, update.text, "/start")
     await bot.send_message(
         chat_id=update.chat.id,
@@ -56,7 +48,7 @@ async def start(bot, update):
     )
 
     
-@pyrogram.Client.on_message(pyrogram.filters.command(["about"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["about"]) & filters.user(Config.AUTH_USERS))
 async def get_me_info(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/about")
@@ -68,23 +60,10 @@ async def get_me_info(bot, update):
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
-    ) 
+    )  
     
     
-@pyrogram.Client.on_message(pyrogram.filters.command(["source", "code"]))
-async def upgrade(bot, update):
-    # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/source")
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.SOURCE_TEXT,
-        parse_mode="html",
-        reply_to_message_id=update.message_id,
-        disable_web_page_preview=True
-    ) 
-    
-    
-@pyrogram.Client.on_message(pyrogram.filters.command(["help"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["help"]) & filters.user(Config.AUTH_USERS))
 async def help_user(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/help")
@@ -97,29 +76,3 @@ async def help_user(bot, update):
     )
     
     
-@pyrogram.Client.on_message(pyrogram.filters.command(["plan"]))
-async def get_me_info(bot, update):
-    # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/plan")
-    chat_id = str(update.from_user.id)
-    chat_id, plan_type, expires_at = GetExpiryDate(chat_id)
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.CURENT_PLAN_DETAILS.format(chat_id, plan_type, expires_at),
-        parse_mode="html",
-        disable_web_page_preview=True,
-        reply_to_message_id=update.message_id
-    )
-
-    
-@pyrogram.Client.on_message(pyrogram.filters.command(["upgrade"]))
-async def upgrade(bot, update):
-    # logger.info(update)
-    TRChatBase(update.from_user.id, update.text, "/upgrade")
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.UPGRADE_TEXT,
-        parse_mode="html",
-        reply_to_message_id=update.message_id,
-        disable_web_page_preview=True
-    )    
