@@ -35,6 +35,7 @@ from hachoir.parser import createParser
 #duckext = duck[ducknum - 1]
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
+from pyrogram import filters
 
 @pyrogram.Client.on_message(pyrogram.filters.document | pyrogram.filters.video & filters.user(Config.AUTH_USERS))
 async def convert_to_video(bot, update):
