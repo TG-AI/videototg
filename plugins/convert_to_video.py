@@ -105,6 +105,7 @@ async def convert_to_video(bot, update):
             reply_to_message_id=update.message_id
         )
         c_time = time.time()
+	mid = a.message_id
         the_real_download_location = await bot.download_media(
             message=update,
             file_name=download_location,
@@ -119,7 +120,7 @@ async def convert_to_video(bot, update):
             await bot.edit_message_text(
                   text=Translation.SAVED_RECVD_DOC_FILE,
                   chat_id=update.chat.id,
-                  message_id=a.message_id
+                  message_id=mid
             )
             
             # don't care about the extension
